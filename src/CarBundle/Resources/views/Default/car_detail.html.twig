@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    {{ car.make.name }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ car.make.name }}</h1>
+    <span class="badge">{{ car.year }}</span>
+    <span class="badge">{{ car.price }}</span>
+    {% if car.navigation %}
+        <span class="badge">
+            Navigation
+        </span>
+    {% endif %}
+    {{ car.description }}
+    <hr>
+    <a href="{{ path('car_list') }}">Zurück</a>
+{% endblock %}

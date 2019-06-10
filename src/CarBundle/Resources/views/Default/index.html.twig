@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    | Cars
+{% endblock %}
+
+{% block body %}
+    {{ include('@Car/Default/_partialtest.html.twig') }}
+    <h1><span>Our</span> Cars</h1>
+
+    <div class="pull-right">
+        {{ form_start(form, { attr: {class: 'form-inline'} }) }}
+        {{ form_widget(form) }}
+{#        {{ form_errors(form.search) }}#}
+        {{ form_end(form) }}
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4"><h2>Name</h2></div>
+        <div class="col-xs-12 col-sm-4"><h2>Make</h2></div>
+        <div class="col-xs-12 col-sm-4"><h2>Actions</h2></div>
+        <div class="clearfix"></div>
+
+        {% for car in cars %}
+            <div class="col-xs-12 col-sm-4">{{ car.make.name }}</div>
+            <div class="col-xs-12 col-sm-4">{{ car.model.name }}</div>
+            <div class="col-xs-12 col-sm-4"><a href="{{ path('car_detail', {id: car.id}) }}">Details</a></div>
+            <div class="clearfix"></div>
+        {% endfor %}
+    </div>
+{% endblock %}
