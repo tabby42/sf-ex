@@ -63,6 +63,13 @@ class Car
     private $navigation;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="promote", type="boolean", nullable=true)
+     */
+    private $promote;
+
+    /**
      * @return bool
      */
     public function isNavigation()
@@ -194,5 +201,21 @@ class Car
     public function getModel()
     {
         return $this->model;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPromote()
+    {
+        return $this->promote;
+    }
+
+    /**
+     * @param bool $promote
+     */
+    public function setPromote($promote)
+    {
+        $this->promote = $promote;
     }
 }

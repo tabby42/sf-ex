@@ -29,6 +29,5 @@ class CarRepository extends \Doctrine\ORM\EntityRepository
         $qb->setParameter('id', $id);
 
         return $qb->getQuery()->getSingleResult();
-
     }
 }

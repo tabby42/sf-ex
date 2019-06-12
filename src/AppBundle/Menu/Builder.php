@@ -29,6 +29,7 @@ class Builder
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
         $menu->addChild('Home', ['route' => 'homepage']);
         $menu->addChild('Cars', ['route' => 'car_list']);
+        $menu->addChild('Manage Cars', ['route' => 'car_index']);
 
         return $menu;
     }
