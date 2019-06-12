@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Cars list</h1>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -11,6 +11,7 @@
                 <th>Price</th>
                 <th>Year</th>
                 <th>Navigation</th>
+                <th>Promoted</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{ car.price }}</td>
                 <td>{{ car.year }}</td>
                 <td>{% if car.navigation %}Yes{% else %}No{% endif %}</td>
+                <td>{% if car.promote %}Yes{% else %}No{% endif %}</td>
                 <td>
                     <ul>
                         <li>

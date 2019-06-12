@@ -36,8 +36,9 @@ class CarController extends Controller
      * @param $id
      * Promote a Car
      *
-     * @Route("/promote/{id}", name="car_promote")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @throws \Doctrine\ORM\OptimisticLockException
+     * @Route("/promote/{id}", name="car_promote")
      */
     public function promoteAction($id)
     {
